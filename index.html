@@ -1,113 +1,571 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tripura Janata Party (TJP)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tripura Janata Party (TJP)</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#f4f4f4;
-      text-align:center;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    header{
-      background:#ff6600;
-      color:white;
-      padding:25px;
-    }
+<style>
 
-    nav{
-      background:#222;
-      padding:10px;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin:15px;
-      font-size:18px;
-    }
+body{
+background:#f5f5f5;
+color:#222;
+line-height:1.6;
+}
 
-    .hero{
-      padding:50px 20px;
-      background:white;
-    }
+header{
+background:linear-gradient(135deg,#ff6a00,#ff9900);
+color:white;
+padding:20px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
 
-    .hero h1{
-      color:#ff6600;
-      font-size:38px;
-    }
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
 
-    .hero p{
-      font-size:20px;
-      color:#333;
-    }
+.logo{
+font-size:30px;
+font-weight:bold;
+}
 
-    .btn{
-      display:inline-block;
-      margin-top:20px;
-      padding:12px 25px;
-      background:#ff6600;
-      color:white;
-      text-decoration:none;
-      border-radius:8px;
-      font-size:18px;
-    }
+.menu a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-size:17px;
+font-weight:bold;
+}
 
-    .section{
-      padding:40px 20px;
-    }
+.hero{
+height:90vh;
+background:url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+position:relative;
+padding:20px;
+}
 
-    footer{
-      background:#222;
-      color:white;
-      padding:20px;
-      margin-top:40px;
-    }
-  </style>
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:850px;
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:24px;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#ff6a00;
+color:white;
+text-decoration:none;
+border-radius:10px;
+margin:10px;
+font-size:18px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#e65c00;
+transform:scale(1.05);
+}
+
+section{
+padding:70px 20px;
+}
+
+.title{
+text-align:center;
+font-size:38px;
+margin-bottom:40px;
+color:#ff6a00;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card i{
+font-size:45px;
+color:#ff6a00;
+margin-bottom:15px;
+}
+
+.leader{
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.leader img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid #ff6a00;
+margin-bottom:20px;
+}
+
+.news-box{
+max-width:1000px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.news-item{
+padding:15px;
+border-bottom:1px solid #ddd;
+}
+
+.news-item:last-child{
+border-bottom:none;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+}
+
+form{
+max-width:700px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+input,textarea,select{
+width:100%;
+padding:14px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#ff6a00;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e65c00;
+}
+
+.constitution{
+max-width:1100px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.constitution h3{
+margin-top:25px;
+color:#ff6a00;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:35px 20px;
+margin-top:40px;
+}
+
+.social a{
+color:white;
+font-size:26px;
+margin:0 10px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+color:white;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+z-index:1000;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.menu{
+margin-top:10px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Tripura Janata Party (TJP)</h1>
-  <p>জনতার শক্তি, ত্রিপুরার উন্নতি</p>
+<div class="navbar">
+
+<div class="logo">
+TJP
+</div>
+
+<div class="menu">
+<a href="#home">Home</a>
+<a href="#vision">Vision</a>
+<a href="#leader">Leader</a>
+<a href="#constitution">Constitution</a>
+<a href="#join">Join</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
 </header>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Vision</a>
-  <a href="#">Contact</a>
-</nav>
+<section class="hero" id="home">
 
-<section class="hero">
-  <h1>স্বাগতম</h1>
-  <p>ত্রিপুরার উন্নয়নের লক্ষ্যে নতুন রাজনৈতিক প্ল্যাটফর্ম</p>
+<div class="hero-content">
 
-  <a class="btn" href="#">
-    Join TJP
-  </a>
+<h1>Tripura Janata Party</h1>
+
+<p>
+জনতার শক্তি, ত্রিপুরার উন্নতি
+</p>
+
+<a href="#join" class="btn">
+Join TJP
+</a>
+
+<a href="#constitution" class="btn">
+Party Constitution
+</a>
+
+</div>
+
 </section>
 
-<section class="section">
-  <h2>আমাদের লক্ষ্য</h2>
+<section id="vision">
 
-  <p>
-    ✔ যুব কর্মসংস্থান  
-    ✔ কৃষক উন্নয়ন  
-    ✔ সামাজিক ন্যায়  
-    ✔ শিক্ষা ও স্বাস্থ্য  
-    ✔ ত্রিপুরার সার্বিক উন্নতি
-  </p>
+<h2 class="title">
+আমাদের লক্ষ্য
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-graduation-cap"></i>
+<h3>শিক্ষা উন্নয়ন</h3>
+<p>আধুনিক শিক্ষা ও ছাত্রদের জন্য সুযোগ বৃদ্ধি।</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-briefcase"></i>
+<h3>যুব কর্মসংস্থান</h3>
+<p>যুবকদের জন্য চাকরি ও দক্ষতা উন্নয়ন।</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-leaf"></i>
+<h3>কৃষি উন্নয়ন</h3>
+<p>কৃষক ও রাবার চাষিদের উন্নয়ন।</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-heart"></i>
+<h3>স্বাস্থ্য সেবা</h3>
+<p>গ্রামে উন্নত স্বাস্থ্য পরিষেবা।</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="leader">
+
+<h2 class="title">
+প্রতিষ্ঠাতা
+</h2>
+
+<div class="leader">
+
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop">
+
+<h2>
+Pranay Das
+</h2>
+
+<p>
+Founder & President – Tripura Janata Party (TJP)
+</p>
+
+<p>
+ত্রিপুরার মানুষের উন্নয়ন ও জনসেবার লক্ষ্য নিয়ে নতুন রাজনৈতিক যাত্রা।
+</p>
+
+</div>
+
+</section>
+
+<section id="constitution">
+
+<h2 class="title">
+দলীয় সংবিধান
+</h2>
+
+<div class="constitution">
+
+<h3>দলীয় মূলমন্ত্র</h3>
+
+<p>
+“জনতার শক্তি, ত্রিপুরার উন্নতি”
+</p>
+
+<h3>দলীয় আদর্শ</h3>
+
+<p>
+ত্রিপুরা জনতা পার্টি ভারতের সংবিধান, গণতন্ত্র, ধর্মনিরপেক্ষতা, সামাজিক ন্যায় ও জাতীয় ঐক্যের আদর্শে বিশ্বাসী।
+</p>
+
+<h3>মূল লক্ষ্যসমূহ</h3>
+
+<p>
+✔ যুব কর্মসংস্থান<br>
+✔ কৃষি ও রাবার উন্নয়ন<br>
+✔ নারী শিক্ষা ও ক্ষমতায়ন<br>
+✔ শিক্ষা ও স্বাস্থ্য উন্নয়ন<br>
+✔ দুর্নীতিমুক্ত প্রশাসন<br>
+✔ সামাজিক সম্প্রীতি
+</p>
+
+<h3>সদস্যপদ</h3>
+
+<p>
+১৮ বছর বা তদূর্ধ্ব যে কোনো ভারতীয় নাগরিক সদস্য হইতে পারিবেন।
+</p>
+
+<h3>দলীয় শপথ</h3>
+
+<p>
+“আমি শপথ করিতেছি যে, আমি ভারতের সংবিধানের প্রতি পূর্ণ শ্রদ্ধাশীল থাকিব এবং ত্রিপুরা জনতা পার্টির আদর্শ, শৃঙ্খলা ও গণতান্ত্রিক নীতির প্রতি আনুগত্য বজায় রাখিব।”
+</p>
+
+<h3>দলীয় স্লোগান</h3>
+
+<p>
+“শান্তি, ঐক্য ও উন্নয়ন”<br>
+“নতুন ভাবনা, নতুন ত্রিপুরা”<br>
+“অধিকার, শিক্ষা ও কর্মসংস্থান”
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Gallery
+</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1494173853739-c21f58b16055?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<section id="join">
+
+<h2 class="title">
+সদস্য নিবন্ধন
+</h2>
+
+<form>
+
+<input type="text" placeholder="আপনার নাম" required>
+
+<input type="email" placeholder="ইমেল">
+
+<input type="tel" placeholder="মোবাইল নম্বর">
+
+<input type="text" placeholder="জেলা">
+
+<select>
+<option>পেশা নির্বাচন করুন</option>
+<option>ছাত্র</option>
+<option>কৃষক</option>
+<option>ব্যবসায়ী</option>
+<option>চাকরিজীবী</option>
+</select>
+
+<textarea rows="5" placeholder="আপনার মতামত"></textarea>
+
+<button type="submit">
+Submit
+</button>
+
+</form>
+
+</section>
+
+<section id="contact">
+
+<h2 class="title">
+যোগাযোগ
+</h2>
+
+<div class="news-box">
+
+<p>
+<strong>Email:</strong> tjpofficial@email.com
+</p>
+
+<p>
+<strong>Phone:</strong> +91 0000000000
+</p>
+
+<p>
+<strong>Location:</strong> Sabroom, South Tripura
+</p>
+
+</div>
+
 </section>
 
 <footer>
-  <p>© 2026 Tripura Janata Party (TJP)</p>
+
+<h2>
+Tripura Janata Party
+</h2>
+
+<p>
+জনতার শক্তি, ত্রিপুরার উন্নতি
+</p>
+
+<div class="social">
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+</div>
+
+<p style="margin-top:20px;">
+© 2026 TJP. All Rights Reserved.
+</p>
+
 </footer>
 
+<a href="https://wa.me/910000000000" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
 </body>
-</html>
+  </html>
+                     
