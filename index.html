@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
@@ -14,102 +14,49 @@
             background:linear-gradient(135deg,#ff6a00,#ff9900);
             color:white;
             padding:15px 20px;
-            position:sticky;
-            top:0;
-            z-index:1000;
+            position:sticky;top:0;z-index:1000;
             box-shadow:0 2px 10px rgba(0,0,0,0.2);
         }
         .navbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
         .logo-area{display:flex;align-items:center;gap:12px;}
         .logo{font-size:28px;font-weight:bold;}
-        .party-flag{
-            height:58px;
-            border:2px solid white;
-            border-radius:6px;
-            box-shadow:0 3px 8px rgba(0,0,0,0.25);
-        }
+        .party-flag{height:55px;border:2px solid white;border-radius:6px;box-shadow:0 3px 8px rgba(0,0,0,0.25);}
 
-        .menu a{
-            color:white;
-            text-decoration:none;
-            margin:0 12px;
-            font-weight:600;
-            font-size:17px;
-        }
-        .hamburger{display:none;font-size:28px;cursor:pointer;}
+        .menu a{color:white;text-decoration:none;margin:0 12px;font-weight:600;font-size:17px;}
+        .hamburger{display:none;font-size:28px;cursor:pointer;color:white;}
 
-        .hero{
-            height:90vh;
-            background:url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            color:white;
-            position:relative;
-        }
-        .hero::before{
-            content:'';
-            position:absolute;
-            inset:0;
-            background:rgba(0,0,0,0.5);
-        }
+        .hero{height:80vh;background:url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;color:white;position:relative;}
+        .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5);}
         .hero-content{position:relative;z-index:2;max-width:850px;padding:20px;}
-        .hero h1{font-size:58px;margin-bottom:15px;}
-        .hero p{font-size:24px;margin-bottom:25px;}
 
-        .btn{
-            display:inline-block;
-            padding:14px 32px;
-            background:#ff6a00;
-            color:white;
-            text-decoration:none;
-            border-radius:50px;
-            margin:10px;
-            font-size:18px;
-            font-weight:600;
-            transition:0.3s;
-        }
+        .btn{display:inline-block;padding:14px 32px;background:#ff6a00;color:white;text-decoration:none;border-radius:50px;margin:10px;font-size:18px;font-weight:600;transition:0.3s;}
         .btn:hover{background:#e65c00;transform:scale(1.08);}
 
         section{padding:70px 20px;}
         .title{text-align:center;font-size:38px;margin-bottom:40px;color:#ff6a00;}
 
+        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;max-width:1200px;margin:auto;}
+        .card{background:white;padding:25px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,0.1);text-align:center;transition:0.3s;}
+        .card:hover{transform:translateY(-10px);}
+
         .leader{text-align:center;max-width:900px;margin:auto;}
-        .leader img{
-            width:260px;
-            height:260px;
-            object-fit:cover;
-            border-radius:50%;
-            border:8px solid #ff6a00;
-            margin-bottom:25px;
-            box-shadow:0 8px 25px rgba(0,0,0,0.25);
-        }
+        .leader img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:8px solid #ff6a00;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.25);}
 
         footer{background:#111;color:white;text-align:center;padding:40px 20px;}
-        .whatsapp{
-            position:fixed;
-            bottom:20px;
-            right:20px;
-            background:#25D366;
-            width:60px;
-            height:60px;
-            border-radius:50%;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            font-size:32px;
-            color:white;
-            box-shadow:0 4px 15px rgba(0,0,0,0.3);
-            z-index:1000;
-        }
+        .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:32px;color:white;box-shadow:0 4px 15px rgba(0,0,0,0.3);z-index:1000;}
 
         @media(max-width:768px){
-            .hero h1{font-size:42px;}
             .hamburger{display:block;}
-            .menu{display:none;flex-direction:column;width:100%;margin-top:15px;}
+            .menu{
+                display:none;
+                flex-direction:column;
+                width:100%;
+                margin-top:15px;
+                background:rgba(255,106,0,0.95);
+                padding:15px 0;
+            }
             .menu.active{display:flex;}
-            .party-flag{height:48px;}
+            .menu a{margin:10px 0;padding:10px;text-align:center;font-size:18px;}
         }
     </style>
 </head>
@@ -119,16 +66,14 @@
     <div class="navbar">
         <div class="logo-area">
             <div class="logo">TJP</div>
-            <img src="https://i.ibb.co/sJtFzwZ4/tjp-flag.jpg" 
-                 alt="Tripura Janata Party Flag" 
-                 class="party-flag">
+            <img src="https://i.ibb.co/sJtFzwZ4/tjp-flag.jpg" alt="TJP Flag" class="party-flag">
         </div>
         <div class="hamburger" id="hamburger">☰</div>
         <div class="menu" id="menu">
             <a href="#home">Home</a>
             <a href="#vision">Vision</a>
             <a href="#leader">Leader</a>
-            <a href="#gallery">Gallery</a>
+            <a href="#constitution">Constitution</a>
             <a href="#join">Join</a>
             <a href="#contact">Contact</a>
         </div>
@@ -143,14 +88,42 @@
     </div>
 </section>
 
+<section id="vision">
+    <h2 class="title">আমাদের লক্ষ্য</h2>
+    <div class="cards">
+        <div class="card"><i class="fa-solid fa-graduation-cap"></i><h3>শিক্ষা উন্নয়ন</h3><p>আধুনিক শিক্ষা ও ছাত্রদের জন্য সুযোগ বৃদ্ধি।</p></div>
+        <div class="card"><i class="fa-solid fa-briefcase"></i><h3>যুব কর্মসংস্থান</h3><p>যুবকদের জন্য চাকরি ও দক্ষতা উন্নয়ন।</p></div>
+        <div class="card"><i class="fa-solid fa-leaf"></i><h3>কৃষি উন্নয়ন</h3><p>কৃষক ও রাবার চাষিদের উন্নয়ন।</p></div>
+        <div class="card"><i class="fa-solid fa-heart"></i><h3>স্বাস্থ্য সেবা</h3><p>গ্রামে উন্নত স্বাস্থ্য পরিষেবা।</p></div>
+    </div>
+</section>
+
 <section id="leader">
     <h2 class="title">প্রতিষ্ঠাতা</h2>
     <div class="leader">
-        <img src="https://i.ibb.co/yFZ2knZ9/pranay-das.jpg" 
-             alt="Pranay Das - Founder & President">
+        <img src="https://i.ibb.co/yFZ2knZ9/pranay-das.jpg" alt="Pranay Das">
         <h2>Pranay Das</h2>
         <p><strong>Founder & President – Tripura Janata Party (TJP)</strong></p>
         <p>ত্রিপুরার মানুষের উন্নয়ন ও জনসেবার লক্ষ্য নিয়ে নতুন রাজনৈতিক যাত্রা।</p>
+    </div>
+</section>
+
+<section id="constitution">
+    <h2 class="title">দলীয় সংবিধান</h2>
+    <div class="constitution" style="max-width:700px;margin:auto;background:white;padding:35px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+        <h3>দলীয় মূলমন্ত্র</h3>
+        <p>“জনতার শক্তি, ত্রিপুরার উন্নতি”</p>
+    </div>
+</section>
+
+<section id="join">
+    <h2 class="title">সদস্য নিবন্ধন</h2>
+    <div style="max-width:700px;margin:auto;background:white;padding:35px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+        <form>
+            <input type="text" placeholder="আপনার নাম" required>
+            <input type="tel" placeholder="মোবাইল নম্বর" required>
+            <button type="submit">আবেদন করুন</button>
+        </form>
     </div>
 </section>
 
@@ -165,10 +138,22 @@
 </a>
 
 <script>
-    // Hamburger Menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-        document.getElementById('menu').classList.toggle('active');
+    // Hamburger Menu Functionality
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link (mobile)
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                menu.classList.remove('active');
+            }
+        });
     });
 </script>
 </body>
-</html>   
+</html>
